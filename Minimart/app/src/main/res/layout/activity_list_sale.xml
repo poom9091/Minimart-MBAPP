@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#bfbfbf"
+    tools:context=".ListSale">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/viewfinder_laser"
+
+        android:padding="15dp"
+        android:text="รายงานสรุปยอดการขาย"
+        android:textColor="#FFF6F6"
+        android:textSize="18sp" />
+
+    <ListView
+        android:id="@+id/ListSale"
+        android:layout_width="match_parent"
+        android:layout_height="524dp" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="60dp"
+        android:background=" #000000"
+        android:onClick="BackToBasic"
+        android:text="กลับหน้าแรก"
+        android:textColor="#F0EDED"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+</LinearLayout>

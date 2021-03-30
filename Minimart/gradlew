@@ -1,0 +1,119 @@
+package com.example.afinal;
+
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentActivity;
+
+import android.Manifest;
+import android.app.Activity;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
+    private static final int LOCATION_REQUEST_CODE = 100;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_maps);
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+    }
+
+    public void clear(View v){
+        mMap.clear();
+    }
+    public void search(View v){
+        EditText edtSearch = (EditText)findViewById(R.id.edtSearch);
+        String q = edtSearch.getText().toString().trim();
+        if(q!=null&&!q.equals("")){
+            Geocoder geo = new Geocoder(MapsActivity.this, Locale.getDefault());
+            try {
+                List<Address> addlists = geo.getFromLocationName(q, 7);
+                if (addlists.size() > 0) {
+                    mMap.clear();
+
+                    Address add = null;
+                    LatLng CurrentAddress = null;
+                    for (int i = 0; i < addlists.size(); i++) {
+                        add = (Address) addlists.get(i);
+                        CurrentAddress = new LatLng(add.getLatitude(), add.getLongitude());
+                        String str = "";
+                        for (int j = 0; j < add.getMaxAddressLineIndex(); j++) {
+                            str = str + add.getAddressLine(j)+"\n";
+                        }
+                        Marker m = mMap.addMarker(new MarkerOptions()
+                                .position(CurrentAddress)
+                                .title(add.getAddressLine(0) + "(Lat : " + add.getLatitude() + ") (Lng : " + add.getLongitude() + ")")
+                                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)).snippet(str));
+                    }
+                    CameraPosition cam = new CameraPosition.Builder()
+                            .target(CurrentAddress)
+                            .zoom(5)
+                            .build();
+                    mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cam));
+                } else {
+                    Toast.makeText(getBaseContext(), "ไม่พบที่อยู่ตามที่ระบุ", Toast.LENGTH_LONG).show();
+                }
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+
+
+    /**
+     * Manipulates the map once available.
+     * This callback is triggered when the map is ready to be used.
+     * This is where we can add markers or lines, add listeners or move the camera. In this case,
+     * we just add a marker near Sydney, Australia.
+     * If Google Play services is not installed on the device, the user will be prompted to install
+     * it inside the SupportMapFragment. This method will only be triggered once the user has
+     * installed Google Play services and returned to the app.
+     */
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(-34, 151);
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        if(mMap != null){
+            if(ActivityCompat.checkSelfPermission(MapsActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                !=PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},LOCATION_REQUEST_CODE);
+            }else{
+                mMap.setMyLocationEnabled(true);
+                mMap.getUiSettings().setZoomControlsEnabled(true);
+
+            }
+        }
+        mMap.addMarker(new MarkerOptions().position(sydney).title("Sydney"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.setOnMapClickListener(new GoogleMap.OnMap

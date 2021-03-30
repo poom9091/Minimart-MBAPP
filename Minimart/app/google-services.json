@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "366622451829",
+    "firebase_url": "https://minimart-8e59d.firebaseio.com",
+    "project_id": "minimart-8e59d",
+    "storage_bucket": "minimart-8e59d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366622451829:android:75b5ec2ddd50543067703c",
+        "android_client_info": {
+          "package_name": "com.example.minimartv1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366622451829-2pf3a56d090jiqnjple2voe24dgmoim2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.minimartv1",
+            "certificate_hash": "d4d3d152b57d1dbf7a6d79a8f9fea69b34617365"
+          }
+        },
+        {
+          "client_id": "366622451829-n0fo01f08l90ujjmj5si5albcus6sg5d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYxLwY8BNnLAWGseu0nu9V9LZ4AjL-rY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "366622451829-n0fo01f08l90ujjmj5si5albcus6sg5d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

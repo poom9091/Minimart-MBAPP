@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#bfbfbf"
+    tools:context=".showDaySale" >
+
+    <ListView
+        android:id="@+id/ListShowDay"
+        android:layout_width="match_parent"
+        android:layout_height="506dp">
+
+    </ListView>
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="รวมกำไรที่ได้ :      "
+            android:textColor="#0A0909"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="ยอดกำไรสะสม"
+            android:textColor="#0A0909"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:text="บาท"
+            android:textColor="#0A0909"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="60dp"
+        android:background=" #000000"
+        android:onClick="Del"
+        android:text="ลบข้อมูล"
+        android:textColor="#F0EDED"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="60dp"
+        android:background=" #000000"
+        android:onClick="BackToBasic"
+        android:text="กลับหน้าแรก"
+
+        android:textColor="#F0EDED"
+        android:textSize="18sp" />
+
+</LinearLayout>

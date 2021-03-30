@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#bfbfbf"
+    tools:context=".checkStork">
+
+    <ListView
+        android:id="@+id/listViewDetail"
+        android:layout_width="match_parent"
+        android:layout_height="510dp"
+        />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginRight="60dp"
+        android:background=" #000000"
+        android:gravity="center"
+        android:onClick="BackToBasic"
+        android:text="กลับหน้าแรก"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+</LinearLayout>

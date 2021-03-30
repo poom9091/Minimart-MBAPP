@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#bfbfbf"
+    tools:context=".MainAfterLogin">
+
+    <TextView
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="60dp"
+        android:gravity="center"
+        android:text="ชื่อร้าน"
+        android:textColor="#050404"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/nameStore"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="60dp"
+        android:text="TextView"
+        android:textColor="#050404"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+
+        android:id="@+id/button"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background=" #000000"
+        android:textColor="#F0EDED"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="60dp"
+        android:text=" + เพิ่มสินค้า + "
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="118dp" />
+
+    <Button
+        android:id="@+id/CheckPro"
+        android:background=" #000000"
+        android:textColor="#F0EDED"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="60dp"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="10dp"
+        android:text="- เช็คสินค้า - "
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="118dp" />
+
+    <Button
+        android:id="@+id/Sum"
+        android:background=" #000000"
+        android:textColor="#F0EDED"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="60dp"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="10dp"
+        android:text=" - คิดเงิน - " />
+
+    <Button
+        android:id="@+id/button6"
+        android:background=" #000000"
+        android:textColor="#F0EDED"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="60dp"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:onClick="SaleHistory"
+        android:text="- สรุปรายงานประจำวัน - " />
+
+    <Button
+        android:id="@+id/EDITUSER"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="60dp"
+        android:background=" #000000"
+        android:text=" - แก้ไขข้อมูลร้าน - "
+        android:textColor="#F0EDED" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="162dp"
+        android:onClick="Logout"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="60dp"
+        android:background=" #000000"
+        android:text="- ออกจากระบบ -"
+        android:textColor="#F0EDED" />
+
+
+</LinearLayout>
